@@ -42,20 +42,20 @@
     <script type="text/javascript">
 
     var PUBNUB_demo = PUBNUB.init({
-        publish_key: 'Your Publish Key Here',
-        subscribe_key: 'Your Subscribe Key Here'
+        publish_key: 'pub-c-08f167b9-9f7c-4836-817a-dc1aec9c406b',
+        subscribe_key: 'sub-c-23afba32-6a44-11e5-a5be-02ee2ddab7fe'
     });
     
     // Subscribe to the demo_tutorial channel
     PUBNUB_demo.subscribe({
-    channel: 'demo_tutorial',
+    channel: 'OmniBot',
     message: function(m){console.log(m)}
     });
     
     // Publish a simple message to the demo_tutorial channel
     PUBNUB_demo.publish({
-    channel: 'demo_tutorial',
-    message: {"color":"blue"}
+    channel: 'OmniBot',
+    message: {"Hello Omni"}
     });
 
 </script>
