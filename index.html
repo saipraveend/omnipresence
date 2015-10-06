@@ -1,10 +1,13 @@
 <html>
+    
     <head>
         <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="js/underscore-min.js"></script>
         <script type="text/javascript" src="js/backbone-min.js"></script>
         <script type="text/javascript" src="js/joystick_view.js"></script>
+        <script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
     </head>
+    
     <body>
 
     <script type="text/html" id="joystick-view">
@@ -35,5 +38,28 @@
             });
         });
     </script>
+    
+    <script type="text/javascript">
+
+    var PUBNUB_demo = PUBNUB.init({
+        publish_key: 'Your Publish Key Here',
+        subscribe_key: 'Your Subscribe Key Here'
+    });
+    
+    // Subscribe to the demo_tutorial channel
+    PUBNUB_demo.subscribe({
+    channel: 'demo_tutorial',
+    message: function(m){console.log(m)}
+    });
+    
+    // Publish a simple message to the demo_tutorial channel
+    PUBNUB_demo.publish({
+    channel: 'demo_tutorial',
+    message: {"color":"blue"}
+    });
+
+</script>
+    
     </body>
+
 </html>
